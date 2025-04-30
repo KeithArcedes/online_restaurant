@@ -1,0 +1,26 @@
+// Override the primary color
+$primary: #2c3e50;
+$secondary: #34495e; // Replace with your desired color
+
+// Import Bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--bs-primary);
+    transition: width 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+}
